@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SpawnWavesAsset" load_steps=3 format=3 uid="uid://b1y7xbq1cm20k"]
+
+[ext_resource type="Resource" uid="uid://btidkmj2acebv" path="res://resources/EnemyAsset.tres" id="1_01j7t"]
+[ext_resource type="Script" path="res://scripts/assets/SpawnWavesAsset.gd" id="1_dqpm6"]
+
+[resource]
+script = ExtResource("1_dqpm6")
+enemyAsset = ExtResource("1_01j7t")
+count = 4
+timeBetweenSpawns = 1.0

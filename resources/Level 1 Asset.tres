@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="LevelAsset" load_steps=3 format=3 uid="uid://3tbo2l8p4hxu"]
+
+[ext_resource type="Script" path="res://scripts/assets/LevelAsset.gd" id="1_pstys"]
+[ext_resource type="Resource" uid="uid://b1y7xbq1cm20k" path="res://resources/SpawnWavesAsset.tres" id="2_r4pjv"]
+
+[resource]
+script = ExtResource("1_pstys")
+spawnWavesAsset = ExtResource("2_r4pjv")

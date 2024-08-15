@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="AssetRoot" load_steps=3 format=3 uid="uid://cc2scnypfaoqr"]
+
+[ext_resource type="Script" path="res://scripts/assets/AssetRoot.gd" id="1_l5ukd"]
+[ext_resource type="Resource" uid="uid://3tbo2l8p4hxu" path="res://resources/Level 1 Asset.tres" id="1_peyit"]
+
+[resource]
+script = ExtResource("1_l5ukd")
+Levels = Array[Resource("res://scripts/assets/LevelAsset.gd")]([ExtResource("1_peyit")])

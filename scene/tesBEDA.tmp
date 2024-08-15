@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dvdr4x8ol1d7h"]
+
+[ext_resource type="Script" path="res://scripts/field/GridHolder.gd" id="1_idicl"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rlj1w"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_jpqtk"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 8.18573, 0)
+fov = 74.7731
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.527089, 0.84981, 0, -0.84981, 0.527089, 0, 6.46755, 0)
+
+[node name="Plane1" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_rlj1w")
+script = ExtResource("1_idicl")
+m_GridWidth = 10
+m_GridHeight = 10
+m_CellSize = 1.0
+
+[node name="Plane" type="StaticBody3D" parent="Plane1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Plane1/Plane"]
+shape = SubResource("ConcavePolygonShape3D_jpqtk")
