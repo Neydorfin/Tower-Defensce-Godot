@@ -1,13 +1,13 @@
 extends Node
 class_name InterfaceController
 
-func onStart():
+func onStart() -> void:
 	print("Start_Interaface")
 
 
-func onStop():
+func onStop() -> void:
 	print("Stop_Interaface")
 
 
-func tick():
+func tick(_delta) -> void:
 	print("Tick_Interaface")
