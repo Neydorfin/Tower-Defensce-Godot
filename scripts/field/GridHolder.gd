@@ -16,7 +16,6 @@ var Offset: Vector3
 
 func _ready():
 	Camera = get_viewport().get_camera_3d()
-	
 	var width : float = GridWidth * CellSize
 	var height : float = GridHeight * CellSize
 	

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://73bji7x80jqs"]
+
+[ext_resource type="Script" path="res://scripts/runtime/GameStarter.gd" id="1_fnsbq"]
+[ext_resource type="Resource" uid="uid://cc2scnypfaoqr" path="res://resources/AssetRoot.tres" id="2_7dktd"]
+
+[node name="GameStarter" type="Node3D"]
+script = ExtResource("1_fnsbq")
+assetRoot = ExtResource("2_7dktd")
