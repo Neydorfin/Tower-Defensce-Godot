@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvdr4x8ol1d7h"]
+
+[ext_resource type="Script" path="res://scripts/runtime/Runner.gd" id="1_nm3pn"]
+[ext_resource type="Script" path="res://scripts/field/GridHolder.gd" id="2_wj858"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8w3tm"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_g0frq"]
+data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1)
+
+[node name="Runner" type="Node3D"]
+script = ExtResource("1_nm3pn")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.383667, 0.923472, 0, -0.923472, 0.383667, 0, 10.0243, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.185718, 0.982603, 0, -0.982603, 0.185718, 0, 17.1839, 3.12253)
+
+[node name="GridHolder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.29838)
+mesh = SubResource("PlaneMesh_8w3tm")
+script = ExtResource("2_wj858")
+GridWidth = 20
+GridHeight = 20
+CellSize = 1.0
+TargetCoordinate = Vector2i(19, 19)
+StartCoordinate = Vector2i(5, 5)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="GridHolder"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="GridHolder/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_g0frq")
