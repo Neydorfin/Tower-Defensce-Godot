@@ -1,10 +1,16 @@
-[gd_resource type="Resource" script_class="SpawnWavesAsset" load_steps=3 format=3 uid="uid://b1y7xbq1cm20k"]
+[gd_resource type="Resource" script_class="SpawnWavesAsset" load_steps=5 format=3 uid="uid://4e1qroqonh2m"]
 
-[ext_resource type="Resource" uid="uid://btidkmj2acebv" path="res://resources/EnemyAsset.tres" id="1_01j7t"]
-[ext_resource type="Script" path="res://scripts/assets/SpawnWavesAsset.gd" id="1_dqpm6"]
+[ext_resource type="Script" path="res://scripts/enemySpawn/SpawnWavesAsset.gd" id="1_dqpm6"]
+[ext_resource type="Script" path="res://scripts/enemySpawn/SpawnWave.gd" id="2_wpwl7"]
+[ext_resource type="Resource" uid="uid://btidkmj2acebv" path="res://resources/EnemyAsset.tres" id="3_so02u"]
+
+[sub_resource type="Resource" id="Resource_xwq0u"]
+script = ExtResource("2_wpwl7")
+enemyAsset = ExtResource("3_so02u")
+count = 5
+timeBetweenSpawns = 5000
+timeBeforeStartWave = 100
 
 [resource]
 script = ExtResource("1_dqpm6")
-enemyAsset = ExtResource("1_01j7t")
-count = 4
-timeBetweenSpawns = 1.0
+spawnWaves = Array[ExtResource("2_wpwl7")]([SubResource("Resource_xwq0u")])
