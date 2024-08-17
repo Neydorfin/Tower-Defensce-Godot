@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="EnemyAsset" load_steps=3 format=3 uid="uid://btidkmj2acebv"]
 
-[ext_resource type="Script" path="res://scripts/assets/EnemyAsset.gd" id="1_svgoo"]
+[ext_resource type="Script" path="res://scripts/enemy/EnemyAsset.gd" id="1_svgoo"]
 [ext_resource type="PackedScene" uid="uid://4osp55y2hmv2" path="res://prefabs/enemy.res" id="2_grwi5"]
 
 [resource]
 script = ExtResource("1_svgoo")
-startHealth = 100
+startHealth = 50
 viewPrefab = ExtResource("2_grwi5")
