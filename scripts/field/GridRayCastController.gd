@@ -1,20 +1,20 @@
-class_name GridPointerController
+class_name GridRayCastController
 extends InterfaceController
 
 var gridHolder: GridHolder
 
 
 func _init(grid_holder: GridHolder) -> void:
-    gridHolder = grid_holder
+	gridHolder = grid_holder
 
 
 func onStart() -> void:
-    pass
+	pass
 
 
 func onStop() -> void:
-    pass
+	pass
 
 
 func tick(_delta) -> void:
-    gridHolder.rayCastInGrid()
+	gridHolder.rayCastInGrid()
