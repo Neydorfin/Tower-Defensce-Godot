@@ -2,6 +2,7 @@ class_name TurretView
 extends Node3D
 
 var turretData: TurretData
+var projectileOrigin: Node3D
 
 
 func attachData(turret_data: TurretData) -> void:
