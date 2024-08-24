@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GameManager="*res://scripts/runtime/Game.gd"
 
+[global_group]
+
+enemy=""
+turret=""
+projectile=""
+
 [input]
 
 left_click={

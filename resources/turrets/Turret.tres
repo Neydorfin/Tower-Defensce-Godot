@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TurretAsset" load_steps=4 format=3 uid="uid://bd6d0j5tiaav0"]
+
+[ext_resource type="Script" path="res://scripts/turret/TurretAsset.gd" id="1_36se0"]
+[ext_resource type="PackedScene" uid="uid://drj8vi7k8ichs" path="res://prefabs/turret.res" id="2_55rhx"]
+[ext_resource type="Resource" uid="uid://bn0o0xa0x3hh7" path="res://resources/turrets/BulletWeapon.tres" id="3_vy43h"]
+
+[resource]
+script = ExtResource("1_36se0")
+viewPrefab = ExtResource("2_55rhx")
+weaponAsset = ExtResource("3_vy43h")
