@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="TurretAsset" load_steps=3 format=3 uid="uid://bd6d0j5tiaav0"]
-
-[ext_resource type="Script" path="res://scripts/turret/TurretAsset.gd" id="1_rb1u6"]
-[ext_resource type="PackedScene" uid="uid://drj8vi7k8ichs" path="res://prefabs/turret.res" id="2_1s53y"]
-
-[resource]
-script = ExtResource("1_rb1u6")
-viewPrefab = ExtResource("2_1s53y")

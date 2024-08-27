@@ -5,5 +5,5 @@
 
 [resource]
 script = ExtResource("1_svgoo")
-startHealth = 50
+startHealth = 20
 viewPrefab = ExtResource("2_grwi5")
