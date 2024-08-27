@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cccsd73tia68x"
+path="res://.godot/imported/tile_riverSlopeLarge.obj-ee443bd1e0fd8eb00248182322906803.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tile_riverSlopeLarge.obj-ee443bd1e0fd8eb00248182322906803.mesh"]
+
+source_file="res://Models/tile_riverSlopeLarge.obj"
+dest_files=["res://.godot/imported/tile_riverSlopeLarge.obj-ee443bd1e0fd8eb00248182322906803.mesh", "res://.godot/imported/tile_riverSlopeLarge.obj-ee443bd1e0fd8eb00248182322906803.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

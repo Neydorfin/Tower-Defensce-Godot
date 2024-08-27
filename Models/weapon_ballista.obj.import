@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ldfvcicmgpsv"
+path="res://.godot/imported/weapon_ballista.obj-9362bd113428d2fdd66e7b4b8b536730.mesh"
+
+[deps]
+
+files=["res://.godot/imported/weapon_ballista.obj-9362bd113428d2fdd66e7b4b8b536730.mesh"]
+
+source_file="res://Models/weapon_ballista.obj"
+dest_files=["res://.godot/imported/weapon_ballista.obj-9362bd113428d2fdd66e7b4b8b536730.mesh", "res://.godot/imported/weapon_ballista.obj-9362bd113428d2fdd66e7b4b8b536730.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

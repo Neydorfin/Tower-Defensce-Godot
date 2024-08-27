@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://f236hm1dhk35"
+path="res://.godot/imported/tile_dirtHigh.obj-d782e2bf9e97dbf61ff70e4fe741287a.mesh"
+
+[deps]
+
+files=["res://.godot/imported/tile_dirtHigh.obj-d782e2bf9e97dbf61ff70e4fe741287a.mesh"]
+
+source_file="res://Models/tile_dirtHigh.obj"
+dest_files=["res://.godot/imported/tile_dirtHigh.obj-d782e2bf9e97dbf61ff70e4fe741287a.mesh", "res://.godot/imported/tile_dirtHigh.obj-d782e2bf9e97dbf61ff70e4fe741287a.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false
