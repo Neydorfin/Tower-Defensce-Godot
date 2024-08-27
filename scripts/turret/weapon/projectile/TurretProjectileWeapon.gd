@@ -40,10 +40,11 @@ func _tickWeapon() -> void:
 func _tickProjectiles(_delta) -> void:
 	for i in _projectiles.size():
 		var projectile: InterfaceProjectile = _projectiles[i]
-		projectile.tickApprouching(_delta)
-		if projectile.didHit():
-			projectile.destroyProjectile()
-			_projectiles[i] = null
+		if projectile != null:
+			projectile.tickApprouching(_delta)
+			if projectile.didHit():
+				projectile.destroyProjectile()
+				_projectiles[i] = null
 
 	while null in _projectiles:
 		_projectiles.erase(null)
@@ -55,7 +56,8 @@ func _tickTower() -> void:
 
 
 func shoot(enemy_data: EnemyData) -> void:
+	_turretView.animateShot()
 	_projectiles.append(_turretProjectileWeaponAsset.projectileAsset.createProjectile(
 		_turretView.projectileOrigin.global_position,
-		_turretView.projectileOrigin.global_transform.basis.z,
+		_turretView.projectileOrigin.global_basis.z,
 		enemy_data))
