@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TurretProjectileWeaponAsset" load_steps=3 format=3 uid="uid://bn0o0xa0x3hh7"]
+
+[ext_resource type="Resource" uid="uid://d2vnddftha735" path="res://resources/turrets/default/Bullet.tres" id="1_2ro4f"]
+[ext_resource type="Script" path="res://scripts/turret/weapon/projectile/TurretProjectileWeaponAsset.gd" id="2_wxjq4"]
+
+[resource]
+script = ExtResource("2_wxjq4")
+rateOfFire = 2.0
+maxDistance = 10.0
+projectileAsset = ExtResource("1_2ro4f")
