@@ -1,25 +1,25 @@
 class_name EnemyData
 
-var _enemy_asset: EnemyAsset
 var enemyView: EnemyView
-var _health: int
+var enemyAsset: EnemyAsset
+var _health: float
 
 
 func _init(enemy_asset: EnemyAsset) -> void:
-    _enemy_asset = enemy_asset
-    _health = enemy_asset.startHealth
+	enemyAsset = enemy_asset
+	_health = enemy_asset.startHealth
 
 
 func attachView(enemy_view: EnemyView) -> void:
-    enemyView = enemy_view
-    enemyView.attachData(self)
+	enemyView = enemy_view
+	enemyView.attachData(self)
 
 
-func getDamage(damage: int) -> void:
-    _health -= damage
-    if _health < 0:
-        die()
+func getDamage(damage: float) -> void:
+	_health -= damage
+	if _health < 0:
+		die()
 
 
 func  die():
-    print("Die")
+	print("Die")

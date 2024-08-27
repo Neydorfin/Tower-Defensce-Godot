@@ -1,5 +1,5 @@
-extends Node3D
 class_name GridHolder
+extends Node3D
 
 @export var GridWidth: int
 @export var GridHeight: int

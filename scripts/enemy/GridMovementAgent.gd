@@ -33,4 +33,3 @@ func tickMovement(_delta) -> void:
 	var move: Vector3      = direction * (Speed * _delta)
 	
 	parrent.position += move
-	
