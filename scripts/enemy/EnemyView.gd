@@ -6,8 +6,8 @@ var movementAgent: InterfaceMovementAgent
 
 
 func attachData(enemy_data: EnemyData) -> void:
-	enemyData = enemy_data
+    enemyData = enemy_data
 
 
 func createMovementAgent(grid: Grid) -> void:
-	movementAgent = GridMovementAgent.new(5, self, grid)
+    movementAgent = GridMovementAgent.new(5, self, grid)

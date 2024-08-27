@@ -1,6 +1,6 @@
 @tool
-extends Resource
 class_name LevelAsset
+extends Resource
 
 @export var sceneAsset: PackedScene
 @export var spawnWavesAsset: SpawnWavesAsset
