@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="BulletProjectileAsset" load_steps=3 format=3 uid="uid://db7g04kekixtc"]
+
+[ext_resource type="PackedScene" uid="uid://wi2u3l3ho4hg" path="res://prefabs/arrow.res" id="1_digci"]
+[ext_resource type="Script" path="res://scripts/turret/weapon/projectile/bullet/BulletProjectileAsset.gd" id="2_71t81"]
+
+[resource]
+script = ExtResource("2_71t81")
+_bulletPrefab = ExtResource("1_digci")
+speed = 50.0
+damage = 10.0
