@@ -21,4 +21,3 @@ func towerLookAt(point: Vector3) -> void:
 
 func animateShot() -> void:
 	_animator["parameters/conditions/shot"] = true
-	_animator["parameters/conditions/shot"] = false
