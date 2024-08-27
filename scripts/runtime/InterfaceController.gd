@@ -1,5 +1,5 @@
-extends Node
 class_name InterfaceController
+extends Node
 
 func onStart() -> void:
 	print("Start_Interaface")

@@ -1,5 +1,5 @@
-extends Node
 class_name GameStarter
+extends Node
 
 @export var assetRoot: AssetRoot
 

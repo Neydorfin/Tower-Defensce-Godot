@@ -28,6 +28,7 @@ func createAllControllers():
 	EnemySpawnController.new(GameManager.currentLevel.spawnWavesAsset, GameManager.player.grid),
 	TurretSpawnController.new(GameManager.player.grid, GameManager.player.turretMarket),
 	MovementController.new(),
+	TurretShootController.new(),
 	]
 
 
