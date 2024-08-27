@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/turretSpawn/TurretMarketAsset.gd" id="1_nvx2h"]
 [ext_resource type="Script" path="res://scripts/turret/TurretAsset.gd" id="2_g6bu6"]
-[ext_resource type="Resource" uid="uid://bd6d0j5tiaav0" path="res://resources/turrets/Turret.tres" id="3_nc8ri"]
+[ext_resource type="Resource" uid="uid://16lb2wh5to4x" path="res://resources/turrets/bowTurret/BowTurret.tres" id="3_2jmvf"]
 
 [resource]
 script = ExtResource("1_nvx2h")
-turretAssets = Array[ExtResource("2_g6bu6")]([ExtResource("3_nc8ri")])
+turretAssets = Array[ExtResource("2_g6bu6")]([ExtResource("3_2jmvf")])
