@@ -1,7 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvdr4x8ol1d7h"]
+[gd_scene load_steps=8 format=3 uid="uid://dvdr4x8ol1d7h"]
 
 [ext_resource type="Script" path="res://scripts/runtime/Runner.gd" id="1_nm3pn"]
 [ext_resource type="Script" path="res://scripts/field/GridHolder.gd" id="2_wj858"]
+[ext_resource type="ArrayMesh" uid="uid://b5septya7fumy" path="res://Models/tile.obj" id="3_gx5m0"]
+[ext_resource type="ArrayMesh" uid="uid://cakvvdbaupd3k" path="res://Models/towerSquare_middleA.obj" id="4_kalkb"]
+[ext_resource type="ArrayMesh" uid="uid://bcvkj2xpyg7yk" path="res://Models/towerSquare_middleC.obj" id="5_c6civ"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_8w3tm"]
 
@@ -11,22 +14,291 @@ data = PackedVector3Array(1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0
 [node name="Runner" type="Node3D"]
 script = ExtResource("1_nm3pn")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.383667, 0.923472, 0, -0.923472, 0.383667, 0, 10.0243, 0)
-
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.185718, 0.982603, 0, -0.982603, 0.185718, 0, 17.1839, 3.12253)
+transform = Transform3D(-4.37114e-08, 0.919822, -0.392337, 0, 0.392337, 0.919822, 1, 4.02067e-08, -1.71496e-08, -5.915, 10.03, 0)
+fov = 70.0
 
 [node name="GridHolder" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.29838)
+transform = Transform3D(6.5, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+visible = false
 mesh = SubResource("PlaneMesh_8w3tm")
 script = ExtResource("2_wj858")
-GridWidth = 20
+GridWidth = 13
 GridHeight = 20
 CellSize = 1.0
-TargetCoordinate = Vector2i(19, 19)
+TargetCoordinate = Vector2i(7, 19)
+StartCoordinate = Vector2i(7, 0)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GridHolder"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="GridHolder/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_g0frq")
+
+[node name="Ground" type="Node3D" parent="."]
+
+[node name="Tile" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(17, 0, 0, 0, 1, 0, 0, 0, 24, 0, -0.2, 0)
+mesh = ExtResource("3_gx5m0")
+skeleton = NodePath("../..")
+
+[node name="Walls" type="Node3D" parent="."]
+
+[node name="TowerSquareMiddleA" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 25.3, 7, 0, 0)
+mesh = ExtResource("4_kalkb")
+skeleton = NodePath("../..")
+
+[node name="TowerSquareMiddleA2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 25.3, -7, 0, 0)
+mesh = ExtResource("4_kalkb")
+skeleton = NodePath("../..")
+
+[node name="TowerSquareMiddleA3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(14.95, 0, 0, 0, 1, 0, 0, 0, 1.15, 0, 0, 10.5)
+mesh = ExtResource("4_kalkb")
+skeleton = NodePath("../..")
+
+[node name="TowerSquareMiddleA4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 10.5)
+mesh = ExtResource("4_kalkb")
+skeleton = NodePath("../..")
+
+[node name="TowerSquareMiddleA5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 10.5)
+mesh = ExtResource("4_kalkb")
+skeleton = NodePath("../..")
+
+[node name="TowerSquareMiddleC" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 5, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC54" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 6, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC2" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 4, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC3" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 3, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC4" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 2, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC5" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 1, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC6" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 0, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC7" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -1, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC8" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -2, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC9" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -3, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC10" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -4, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC55" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -6, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC11" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -5, 0.5, 10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC12" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 8.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC50" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 9.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC13" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 7.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC14" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 6.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC15" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 5.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC16" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 4.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC17" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 2.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC18" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 3.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC19" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 1.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC20" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, 0.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC21" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -0.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC22" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -1.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC23" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -2.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC24" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -3.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC25" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -4.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC26" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -5.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC27" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -6.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC28" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -7.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC29" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -8.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC30" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -9.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC53" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, -7, 0.5, -10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC31" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 8.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC51" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 9.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC32" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 7.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC33" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 6.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC34" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 5.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC35" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 4.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC36" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 2.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC37" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 3.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC38" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 1.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC39" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, 0.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC40" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -0.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC41" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -1.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC42" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -2.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC43" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -3.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC44" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -4.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC45" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -5.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC46" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -6.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC47" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -7.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC48" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -8.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC49" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -9.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="TowerSquareMiddleC52" type="MeshInstance3D" parent="Walls"]
+transform = Transform3D(1.15, 0, 0, 0, 1, 0, 0, 0, 1.15, 7, 0.5, -10.5)
+mesh = ExtResource("5_c6civ")
+
+[node name="Light" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, 0.642413, 0.766358, 0, -0.766358, 0.642413, 0, 10.0243, 0)
+light_energy = 0.8
+light_bake_mode = 1
+shadow_enabled = true
+shadow_normal_bias = 0.0
+shadow_opacity = 0.5
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="Light"]
+transform = Transform3D(1, 0, 0, 0, -0.470719, -0.882283, 0, 0.882283, -0.470719, 0, 10.0243, 0)
+light_color = Color(0, 0.423529, 1, 1)
+light_energy = 0.2
