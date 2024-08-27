@@ -25,7 +25,6 @@ GridWidth = 20
 GridHeight = 20
 CellSize = 1.0
 TargetCoordinate = Vector2i(19, 19)
-StartCoordinate = Vector2i(5, 5)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="GridHolder"]
 
